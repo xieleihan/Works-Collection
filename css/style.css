@@ -1,0 +1,32 @@
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(-165px);;
+        
+    }
+
+    to {
+        transform: translateX(-1005px);
+        
+    }
+}
+
+.item-group {
+    animation: slideInFromRight 30s linear infinite;;
+    
+    position: relative;
+    /* 初始化不可见 */
+}
+
+.item-group img:nth-child(1){
+    transform: translateX(-50%);
+}
+
+.item-group img{
+    min-width: 100px;
+    min-height: 100px;
+}
+
+.my-d-flex {
+    overflow: hidden;
+    /* 防止动画前元素溢出 */
+}
