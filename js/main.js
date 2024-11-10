@@ -4,12 +4,12 @@ var OriginTitle = document.title;
 var titleTime;
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-        $('[rel="icon"]').attr('href', "/image/peacock_flat.ico");
+        $('[rel="icon"]').attr('href', "./image/peacock_flat.ico");
         document.title = '进一步有进一步的欢喜';
         clearTimeout(titleTime);
     }
     else {
-        $('[rel="icon"]').attr('href', "/images/peacock_flat.ico");
+        $('[rel="icon"]').attr('href', "./image/peacock_flat.ico");
         document.title = '谢谢来访~' + OriginTitle;
         titleTime = setTimeout(function () {
             document.title = OriginTitle;
