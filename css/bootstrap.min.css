@@ -8437,6 +8437,14 @@ fieldset:disabled .btn {
     right: 0 !important
 }
 
+.end-2{
+    right: 2% !important
+}
+
+.end-20{
+    right: 20% !important
+}
+
 .end-50 {
     right: 50% !important
 }

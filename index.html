@@ -44,11 +44,11 @@
                     <p class="lead">
                         你可以点击下面的方式联系我，或者滚动更多查看我的作品。
                     </p>
-                    <button class="btn btn-light btn-lg me-2">
+                    <button class="btn btn-light btn-lg m-2">
                         <i class="bi bi-github"></i>
                         Github
                     </button>
-                    <button class="btn btn-primary btn-lg">
+                    <button class="btn btn-primary btn-lg m-2">
                         <i class="bi bi-mailbox"></i>
                         Email
                     </button>
@@ -417,6 +417,35 @@
             </div>
         </div>
     </section>
+
+    <section class="bg-light text-black py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-5 border-end">
+                    <p class="lead">留言板：</p>
+                    <div class="border p-4" id="messageList">
+
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 d-flex flex-column p-2 px-5 ps-lg-5 pe-lg-0">
+                    <input id="inputEmail" style="border: 1px solid #ccc !important;" class="border-0 mb-2 rounded py-2 ps-2" type="email" placeholder="请输入你的邮箱" />
+                    <div class="mb-2 position-relative">
+                        <input id="emailcode" style="border: 1px solid #ccc !important;" class="border-0 w-100 rounded py-2 ps-2" type="text" placeholder="请输入邮箱验证码" maxlength="6">
+                        <button id="sendVerification" class="position-absolute translate-middle-y top-50 end-2 border-0" style="text-decoration: underline;cursor: not-allowed;color: #ccc;">发送验证码</button>
+                    </div>
+                    <input id="username" style="border: 1px solid #ccc !important;" class="border-0 mb-2 rounded py-2 ps-2" type="text" placeholder="请输入你的昵称" />
+
+                    <textarea id="message" style="resize:none;border: 1px solid #ccc !important;" class="border-0 mb-2 rounded ps-2" placeholder="请输入你的留言" ></textarea>
+                    <div class="mb-2 d-flex">
+                        <input id="verifycode" style="border: 1px solid #ccc !important;" class="border-0 rounded py-2 ps-2" type="text" maxlength="4" placeholder="请输入图片验证码">
+                        <img class="img-fluid verifycodeImages" src="./image/svg/loading.svg" style="width: 50%;height: 40px;" alt="">
+                    </div>
+                    <button class="btn btn-primary" id="sendMessage">发送留言</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="bg-light text-black-50 py-5">
         <div class="container">
             <div class="w-100 text-center mb-5">Copyright© 2024 By SouthAki All Rights Reserved.</div>
@@ -425,7 +454,7 @@
                     <p class="h6">萌ICP备20231229号</p>
                     <p class="h6" id="RunTime"></p>
                 </div>
-                <div class="col-12 col-lg-6 text-end">
+                <div class="col-12 col-lg-6 text-end d-none d-lg-block">
                     <p class="h6">感谢开源项目的支持</p>
                 </div>
             </div>
