@@ -49,11 +49,26 @@ router.post('/addMessage', async (req, res) => {
         return res.status(400).json({ error: '缺少 email 或 message 参数' });
     }
 
+    // 日期: 2024-10-20 10:00:00
+    const date = new Date();
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let hour = date.getHours();
+    let minute = date.getMinutes();
+    let second = date.getSeconds();
+    month = month < 10 ? `0${month}` : month;
+    day = day < 10 ? `0${day}` : day;
+    hour = hour < 10 ? `0${hour}` : hour;
+    minute = minute < 10 ? `0${minute}` : minute;
+    second = second < 10 ? `0${second}` : second;
+    const time = `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+
     // 插入留言
     try {
         const sql = `
-            INSERT INTO db_message_board (email, message, username, avater)
-            VALUES ('${email}', '${message}', '${username}', '${avater}')
+            INSERT INTO db_message_board (email, message, username, avater, datestr)
+            VALUES ('${email}', '${message}', '${username}', '${avater}', '${time}')
         `;
         await db.query(sql);
         return res.json({ code: 200, message: '留言成功' });

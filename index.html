@@ -22,11 +22,14 @@
             
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">联系</a>
+                    <li class="nav-item d-flex align-items-center">
+                        <input class="rounded ps-2" type="text" placeholder="Google搜索">
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">关于</a>
+                        <a href="#" class="nav-link" style="cursor: url('./res/help.cur'), pointer;"><i class="bi me-1 bi-router"></i>联系</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="about" href="#" class="nav-link" style="cursor: url('./res/help.cur'), pointer;"><i class="bi me-1 bi-slack"></i>关于</a>
                     </li>
                 </ul>
             </div>
@@ -39,19 +42,19 @@
                 <div class="mt-lg-5 mt-0">
                     <h1>你好，我是<span class="text-warning">南秋SouthAki</span></h1>
                     <p class="lead">
-                        我是一个前端开发者，精通前端三大件（HTML+CSS+JavaScript）的熟练使用和前端主流的Vue等框架，有一年的前端开发经验。这个页面主要是想展示一些自己的项目,仅此之外,也是为了展示自己的技术水平。
+                        我是一个前端开发者，精通前端三大件（HTML+CSS+JavaScript）的熟练使用和前端主流的Vue等框架，有一年的前端开发经验。这个页面主要是想展示一些自己的项目，仅此之外，谨致我这一程人生奔赴的跌跌撞撞。
                     </p>
                     <p class="lead">
                         你可以点击下面的方式联系我，或者滚动更多查看我的作品。
                     </p>
-                    <button class="btn btn-light btn-lg m-2">
+                    <a target="_blank" href="https://github.com/xieleihan" class="btn btn-light btn-lg m-2" style="cursor: url('./res/help.cur'), pointer;">
                         <i class="bi bi-github"></i>
                         Github
-                    </button>
-                    <button class="btn btn-primary btn-lg m-2">
+                    </a>
+                    <a href="mailto:xieleihaninc@wo.cn" class="btn btn-primary btn-lg m-2" style="cursor: url('./res/help.cur'), pointer;">
                         <i class="bi bi-mailbox"></i>
                         Email
-                    </button>
+                    </a>
                 </div>
                 <img src="./image/mmexport1692437709834.png" alt="" class="rounded img-fluid m-5 h-25 w-25 d-none d-lg-block">
             </div>
@@ -78,7 +81,7 @@
                             <li>4、实现了代理隧道的功能，能够调用系统级的服务，实现数据公网传输安全性。</li>
                         </ul>
                     </p>
-                    <button class="btn btn-dark btn-lg">
+                    <button class="btn btn-dark btn-lg" style="cursor: url('./res/help.cur'), pointer;">
                         <i class="bi bi-github"></i>
                         访问项目
                     </button>
@@ -115,7 +118,7 @@
                         <li>4、使用了Websocket技术，将服务器状态展示在前端管理页面，方便管理员查看</li>
                     </ul>
                     </p>
-                    <button class="btn btn-light btn-lg">
+                    <button class="btn btn-light btn-lg" style="cursor: url('./res/help.cur'), pointer;">
                         <i class="bi bi-github"></i>
                         访问项目
                     </button>
@@ -150,7 +153,7 @@
                         <li>4、引入智能助手功能，通过预训练使其精准回答用户关于这个项目相关的内容，并且可以识别用户上传的文件总结旅游规划等。</li>
                     </ul>
                     </p>
-                    <button class="btn btn-dark btn-lg">
+                    <button class="btn btn-dark btn-lg" style="cursor: url('./res/help.cur'), pointer;">
                         <i class="bi bi-github"></i>
                         访问项目
                     </button>
@@ -185,7 +188,7 @@
                         <li>4、引入订单的选项卡，实现基本购物车逻辑等购买逻辑，并且与后端交互生成订单目前状态等相关信息，引入通知功能。</li>
                     </ul>
                     </p>
-                    <button class="btn btn-light btn-lg">
+                    <button class="btn btn-light btn-lg" style="cursor: url('./res/help.cur'), pointer;">
                         <i class="bi bi-github"></i>
                         访问项目
                     </button>
@@ -216,7 +219,7 @@
                         <li>4、引入用户发帖功能，能够对某件商品发表自己的富文本，并给到首页渲染。</li>
                     </ul>
                     </p>
-                    <button class="btn btn-dark btn-lg">
+                    <button class="btn btn-dark btn-lg" style="cursor: url('./res/help.cur'), pointer;">
                         <i class="bi bi-github"></i>
                         访问项目
                     </button>
@@ -247,7 +250,7 @@
                         <li>4、文章阅读区加入工具栏，添加必要的工具，使其在阅读中，能够提升用户的具体阅读体验，并且引入分享功能等。</li>
                     </ul>
                     </p>
-                    <button class="btn btn-light btn-lg">
+                    <button class="btn btn-light btn-lg" style="cursor: url('./res/help.cur'), pointer;">
                         <i class="bi bi-github"></i>
                         访问项目
                     </button>
@@ -279,7 +282,7 @@
                         <li>4、使用Redis，实现大语言模型的记忆功能，能够根据上下文，去进行回答。</li>
                     </ul>
                     </p>
-                    <button class="btn btn-dark btn-lg">
+                    <button class="btn btn-dark btn-lg" style="cursor: url('./res/help.cur'), pointer;">
                         <i class="bi bi-github"></i>
                         访问项目
                     </button>
@@ -421,13 +424,12 @@
     <section class="bg-light text-black py-5">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-5 border-end">
+                <div class="col-12 col-lg-5 px-5 border-end pe-0 pe-lg-5">
                     <p class="lead">留言板：</p>
-                    <div class="border p-4" id="messageList">
-
+                    <div style="max-height: 300px;" class="border p-4 overflow-y-scroll" id="messageList">
                     </div>
                 </div>
-                <div class="col-12 col-lg-5 d-flex flex-column p-2 px-5 ps-lg-5 pe-lg-0">
+                <div class="col-12 col-lg-7 d-flex flex-column p-2 px-5 ps-lg-5 pe-lg-0">
                     <input id="inputEmail" style="border: 1px solid #ccc !important;" class="border-0 mb-2 rounded py-2 ps-2" type="email" placeholder="请输入你的邮箱" />
                     <div class="mb-2 position-relative">
                         <input id="emailcode" style="border: 1px solid #ccc !important;" class="border-0 w-100 rounded py-2 ps-2" type="text" placeholder="请输入邮箱验证码" maxlength="6">
@@ -440,15 +442,20 @@
                         <input id="verifycode" style="border: 1px solid #ccc !important;" class="border-0 rounded py-2 ps-2" type="text" maxlength="4" placeholder="请输入图片验证码">
                         <img class="img-fluid verifycodeImages" src="./image/svg/loading.svg" style="width: 50%;height: 40px;" alt="">
                     </div>
-                    <button class="btn btn-primary" id="sendMessage">发送留言</button>
+                    <button class="btn btn-primary" id="sendMessage" style="cursor: url('./res/help.cur'), pointer;">发送留言</button>
                 </div>
             </div>
         </div>
     </section>
+    <section>
+        <div>
+            <img class="img-fluid" src="./image/bg.jpg" alt="">
+        </div>
+    </section>
 
-    <section class="bg-light text-black-50 py-5">
+    <section class="bg-light text-black-50 pb-5">
         <div class="container">
-            <div class="w-100 text-center mb-5">Copyright© 2024 By SouthAki All Rights Reserved.</div>
+            <div class="w-100 text-center mb-5 border-top pt-5">Copyright© 2024 By SouthAki All Rights Reserved.</div>
             <div class="row fs-1 h6 d-flex justify-content-between">
                 <div class="col-12 col-lg-6">
                     <p class="h6">萌ICP备20231229号</p>
@@ -456,11 +463,36 @@
                 </div>
                 <div class="col-12 col-lg-6 text-end d-none d-lg-block">
                     <p class="h6">感谢开源项目的支持</p>
+                    <div>
+                        <img class="img-fluid" style="width: 100px;" src="./image/icon/bootstrap.png" alt="">
+                        <img class="img-fluid" style="width: 100px;" src="./image/icon/jQuery.png" alt="">
+                    </div>
                 </div>
+            </div>
+            <div class="d-flex flex-row justify-content-center mt-4">
+                <img class="img-fluid me-3"
+                    src="https://img.shields.io/badge/%E7%BD%91%E7%9B%BE%E6%98%9F%E7%90%83-%E6%8F%90%E4%BE%9BCDN%E6%94%AF%E6%8C%81-red"
+                    alt="">
+                <img class="img-fluid me-3" src="https://data.jsdelivr.com/v1/package/gh/southaki/contentDeliveryNetwork/badge"
+                    alt="">
+                <img class="img-fluid me-3"
+                    src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt="">
             </div>
         </div>
 
     </section>
+
+    <div class="toast show position-fixed top-10 end-2" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+        <div class="toast-header">
+            <img style="width: 25px; height: 25px;" src="./image/peacock_flat.ico" class="rounded mr-2 img-fluid" alt="...">
+            <strong class="me-auto">Bootstrap</strong>
+            <small class="text-muted">Now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            您好! 这是一个Toasts弹出提示框.
+        </div>
+    </div>
 </body>
 <script src="./js/bootstrap.bundle.min.js"></script>
 <script src="./js/jquery-3.7.1.min.js"></script>

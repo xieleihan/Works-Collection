@@ -30,3 +30,9 @@
     overflow: hidden;
     /* 防止动画前元素溢出 */
 }
+
+/* 鼠标样式 */
+html{
+    cursor: url('../res/normal.cur'), default;
+    font-family: 'PingFang SC';
+}

@@ -40,8 +40,7 @@ function post(url, data) {
     });
 }
 
-// 留言列表抢先刷新
-$(async function () {
+async function updataMessageList(){
     await get(url + "/api/message/getMessageList")
         .then(res => {
             if (res.data && Array.isArray(res.data)) {
@@ -59,7 +58,8 @@ $(async function () {
                             </div>
                             <div class="w-75 position-relative">
                                 <p class="m-0">${item.username}</p>
-                                <p class="m-0">${item.message}</p>
+                                <p class="m-0" style="overflow:hidden;text-overflow: ellipsis;white-space: nowrap;">${item.message}</p>
+                                <p style="font-size:.7rem" class="m-0 position-absolute top-2 end-2 text-black-50">${item.datestr}</p>
                             </div>
                         </div>
                     `);
@@ -71,6 +71,11 @@ $(async function () {
         }).catch(err => {
             console.log(err);
         });
+};
+
+// 留言列表抢先刷新
+$(async function () {
+    updataMessageList();
 })
 
 // 浏览器搞笑标题
@@ -184,6 +189,7 @@ $('#sendMessage').on('click', async function () {
         });
         if (res.code === 200) {
             alert('留言成功');
+            updataMessageList();
             $('#inputEmail').val() = '';
             $('#verifycode').val() = '';
             $('#emailcode').val() = '';
