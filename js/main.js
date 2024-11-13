@@ -1,6 +1,7 @@
 // 定义变量
-const url = 'http://localhost:3000' // 局域网
-const networkUrl = '' // 公网请求
+const url = 'https://api.u546322.nyat.app:26112'
+// const networkUrl = 'api.u546322.nyat.app:26112' // 公网请求
+// const networkUrl = 'http://localhost:3000' // 本地请求
 var messageList;
 
 // 原生Ajax
