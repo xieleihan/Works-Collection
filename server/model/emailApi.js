@@ -16,20 +16,15 @@ const FROM_EMAIL = qq.email;//开发者邮箱
 // 2: 储存在数据库(推荐)
 // 3: 使用nodejs储存机制
 class Email {
-    static delay = null;
-    // 发送邮件
+    static delay = {}; // 以 client_email 为键的延迟状态对象
+
     static getEmailCode(client_email) {
         return new Promise((resolve, reject) => {
-            // 生成验证码
-            // let email_code = Math.random().toString().slice(-6);
-            let email_code = Math.random().toString().slice(-6);//四位随机数
-            // id
-            let code_id = uuidv4();
-            //随机生成6位数字
+            let email_code = Math.random().toString().slice(-6); // 生成6位随机验证码
+            let code_id = uuidv4(); // 唯一ID
             let email = {
                 title: `${PROJECT_NAME}---邮箱验证码`,
-                body:
-                    `
+                body: `
 <div style="width: 400px;height: 50px;display: flex;flex-direction: row ;align-items: center;">
 <img style="width:50px;height:50px;margin-right: 10px;" src="https://github.com/xieleihan/QingluanSearch-AndroidDev/raw/main/peacock_flat.png" alt="" />
 <span style="font-weight: bold;font-family: kaiti;">南秋SouthAki<span style="font-family: kaiti;letter-spacing: 15px;color: #ccc;display: block;margin-left: 10px;font-size: 12px;">邮箱验证平台</span></span>
@@ -44,198 +39,84 @@ class Email {
 </p >
 <p style="font-size: 1.5rem;color:#999;">3分钟内有效</p >
 `
-            }
-            let emailCotent = {
-                from: FROM_EMAIL, // 发件人地址
-                to: `${client_email}`, // 收件人地址，多个收件人可以使用逗号分隔
-                subject: email.title, // 邮件标题
-                html: email.body // 邮件内容
-            }
-            // 做多一层判断，判断是否重复发送验证码
+            };
+
+            let emailContent = {
+                from: FROM_EMAIL,
+                to: client_email,
+                subject: email.title,
+                html: email.body
+            };
+
+            // 查询数据库，检查该邮箱是否有延迟
             let sql = `select client_email from db_email_code where client_email='${client_email}'`;
-            // let sql = `select client_email from db_email_code where client_email='${client_email}'`;
+
             db.query(sql)
-                .then(
-                    async (rows) => {
-                        if (rows.length >= 1) {
-                            console.log("已经发送过验证码")
-                            resolve({
-                                code: 1,
-                                msg: '已发送验证码,请勿重复发送。60秒后重新发送。'
-                            })
-                        }
-                        else {
-                            // 发送邮件
-                            await sendEmail.send(emailCotent);
-                            // 345234523@qq.com
-                            // console.log('x.1',{client_email,email_code,code_id});
-                            // 把验证码储存数据库
-                            Email.writeEmailCode(client_email, email_code, code_id)
-                                .then(
-                                    // 发送成功
-                                    () => {
-                                        if (Email.delay != null) {
-                                            clearTimeout(Email.delay);
-                                            resolve({
-                                                code: 1,
-                                                msg: '请60秒后重新发送验证码。'
-                                            });
-                                            return;
-                                        }
-                                        // 执行resolve函数（给用户一个反馈）
-                                        // console.log('x.6',{client_email,email_code,code_id});
-                                        resolve({
-                                            code: 200,
-                                            msg: '发送验证码成功。'
-                                        });
-
-                                        // 60秒之后删除验证码
-                                        Email.delay = setTimeout(() => {
-                                            Email.removeEmailCode(client_email)
-                                            clearTimeout(Email.delay);
-                                            Email.delay = null;
-                                        }, 60 * 1000 * 3)
-                                    },
-                                    () => {
-                                        // console.log("发送邮箱验证发生异常。")
-                                        reject({
-                                            code: -1,
-                                            msg: '发送邮箱验证发生异常。'
-                                        })
-                                    }
-                                )
-                        }
-                    },
-                    () => {
-                        reject({
-                            code: -1,
-                            msg: '服务端发生异常。'
-                        })
+                .then(async (rows) => {
+                    if (rows.length >= 1 && Email.delay[client_email]) {
+                        resolve({
+                            code: 1,
+                            msg: '请60秒后重新发送验证码。',
+                        });
+                        return;
                     }
-                )
-        })
-    }
 
+                    // 发送邮件
+                    await sendEmail.send(emailContent);
+
+                    // 将验证码写入数据库
+                    await Email.writeEmailCode(client_email, email_code, code_id);
+
+                    resolve({
+                        code: 200,
+                        msg: '验证码发送成功。',
+                    });
+
+                    // 设置延迟状态
+                    Email.delay[client_email] = setTimeout(() => {
+                        Email.removeEmailCode(client_email); // 删除验证码
+                        clearTimeout(Email.delay[client_email]);
+                        delete Email.delay[client_email]; // 移除延迟状态
+                    }, 60 * 1000); // 60秒后清除延迟状态
+                })
+                .catch((err) => {
+                    reject({
+                        code: -1,
+                        msg: '服务端发生异常。',
+                        err,
+                    });
+                });
+        });
+    }
 
     // 添加验证码
     static async writeEmailCode(client_email, email_code, code_id) {
-        // console.log('x.0',{client_email,email_code,code_id})
-        return new Promise((resolve, reject) => {
-            // 执行插入数据的sql语句
-            let sql = `insert into db_email_code(client_email,email_code,code_id) values('${client_email}','${email_code}','${code_id}')`;
-            db.query(sql)
-                .then(
-                    rows => {
-                        resolve({
-                            code: 200,
-                            msg: '添加验证码成功。'
-                        })
-                    }
-                )
-                .catch(
-                    err => {
-                        reject({
-                            code: -1,
-                            msg: '添加验证码失败。',
-                            err
-                        })
-                    }
-                )
-        })
+        let sql = `insert into db_email_code(client_email, email_code, code_id) values('${client_email}', '${email_code}', '${code_id}')`;
+        return db.query(sql);
     }
 
     // 删除验证码
     static async removeEmailCode(client_email) {
-        return new Promise((resolve, reject) => {
-            // 执行删除数据的sql语句
-            let sql = `delete from db_email_code where client_email = '${client_email}'`;
-            db.query(sql)
-                .then(
-                    rows => {
-                        resolve({
-                            code: 200,
-                            msg: '删除验证码成功。'
-                        })
-                    }
-                )
-                .catch(
-                    err => {
-                        resolve({
-                            code: -1,
-                            msg: '删除验证码失败。',
-                            err
-                        })
-                    }
-
-                )
-        })
+        let sql = `delete from db_email_code where client_email = '${client_email}'`;
+        return db.query(sql);
     }
 
-    static async writeEmail(client_email) {
-        return new Promise((resolve, reject) => {
-            // 执行写入email数据的sql语句
-            let sql = `insert into db_message_board (client_email) values ('${client_email}')`;
-            db.query(sql)
-                .then(
-                    rows => {
-                        resolve({
-                            code: 200,
-                            msg: '写入成功。'
-                        })
-                    }
-                )
-                .catch(
-                    err => {
-                        resolve({
-                            code: -1,
-                            msg: '写入失败。',
-                            err
-                        })
-                    }
-
-                )
-        })
-    }
-
-    // 判断邮箱的验证码是否是过期(是否有该验证码)
+    // 验证邮箱验证码
     static async verifyEmailCode(client_email, email_code) {
-        console.log('x.1', { client_email, email_code })
-        // 判断邮箱和验证码是否匹配
-        return new Promise((resolve, reject) => {
-            // 执行查询数据的sql语句
-            let sql = `select client_email from db_email_code where client_email = '${client_email}' and email_code='${email_code}'`;
-            console.log(sql)
-            db.query(sql)
-                .then(
-                    rows => {
-                        console.log("x.3", rows)
-                        console.log("x.4", rows.length)
-                        if (rows.length === 1) {
-                            resolve({
-                                code: 200,
-                                msg: '邮箱验证成功。'
-                            })
-
-                        }
-                        else {
-                            console.log('x.2', { client_email, email_code })
-                            resolve({
-                                code: -1,
-                                msg: '邮箱验证失败1111。'
-                            })
-                        }
-                    },
-
-                    err => {
-                        reject({
-                            code: -1,
-                            msg: '邮箱验证失败2222。',
-                            err
-                        })
-                    }
-                )
-        })
+        let sql = `select client_email from db_email_code where client_email = '${client_email}' and email_code='${email_code}'`;
+        let rows = await db.query(sql);
+        if (rows.length === 1) {
+            return {
+                code: 200,
+                msg: '邮箱验证成功。',
+            };
+        } else {
+            return {
+                code: -1,
+                msg: '邮箱验证失败。',
+            };
+        }
     }
-
 }
+
 module.exports = Email;
