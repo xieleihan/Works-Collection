@@ -1,5 +1,6 @@
 // 定义变量
-const url = 'http://localhost:3000'
+const url = 'http://localhost:3000' // 局域网
+const networkUrl = '' // 公网请求
 var messageList;
 
 // 原生Ajax
