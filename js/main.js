@@ -190,14 +190,15 @@ $('#sendMessage').on('click', async function () {
             "code": emailcode,
             "verifycode": verificationCode
         });
+        console.log()
         if (res.code === 200) {
             alert('留言成功');
             updataMessageList();
-            $('#inputEmail').val() = '';
-            $('#verifycode').val() = '';
-            $('#emailcode').val() = '';
-            $('#username').val() = '';
-            $('#message').val() = '';
+            $('#inputEmail').val('');
+            $('#verifycode').val('');
+            $('#emailcode').val('');
+            $('#username').val('');
+            $('#message').val('');
         }
     } catch (err) {
         console.log(err);
