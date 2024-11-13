@@ -154,6 +154,7 @@ $('#inputEmail').on("input", function () {
                 // 发送验证码
                 try {
                     const res = await get(url + '/api/email/send?email=' + emailValue);
+                    console.log("res", res,res.code);
                     if (res.code === 200) {
                         const verifyRes = await get(url + '/api/verifyImage/generateVerifyimages?client_email=' + emailValue)
                         $(".verifycodeImages").attr("src", `data:image/svg+xml;base64,${btoa(verifyRes.img)}`);
