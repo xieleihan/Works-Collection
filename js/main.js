@@ -1,5 +1,7 @@
 // 定义变量
 const url = 'https://api.u546322.nyat.app:26112'
+// const url = 'http://localhost:3000'
+
 // const networkUrl = 'api.u546322.nyat.app:26112' // 公网请求
 // const networkUrl = 'http://localhost:3000' // 本地请求
 var messageList;
@@ -76,13 +78,24 @@ async function updataMessageList(){
 };
 
 async function getIpInfo() {
-    await get('http://ip-api.com/json/?lang=zh-CN')
-        .then(res => {
-            console.log(res);
-            $('#ip').text("IP地址：" + res.query);
-            $('#city').text("城市：" + res.country + res.city + res.regionName);
-            $('#zip').text("邮编：" + res.zip);
-            $('#isp').text("运营商：" + res.isp);
+    await get('https://api.ipify.org/?format=json')
+        .then(async res => {
+            console.log(res.ip);
+            // $('#ip').text("IP地址：" + res.query);
+            // $('#city').text("城市：" + res.country + res.city + res.regionName);
+            // $('#zip').text("邮编：" + res.zip);
+            // $('#isp').text("运营商：" + res.isp);
+            await get(url + '/api/proxy/ipqueryinfo?ip=' + res.ip)
+                .then((res) => {
+                    console.log(res);
+                    $('#ip').text("IP地址：" + res.result.ip);
+                    $('#city').text("城市：" + res.result.country + res.result.province + res.result.city);
+                    // $('#zip').text("邮编：" + res.zip);
+                    $('#isp').text("运营商：" + res.result.isp);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
         })
         .catch(err => {
             console.log(err);

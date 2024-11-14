@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser')
+require('dotenv').config({ path: './.env' });
+
+const ipquery_key = process.env.ipquerykey
 
 const app = express();
 const PORT = 3000;
@@ -35,6 +38,20 @@ app.use('/api/message', messageRouter);
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
+
+// ip信息接口
+app.get('/api/proxy/ipqueryinfo', (req, res) => {
+    const ip = req.query.ip;
+    const request = require('request');
+    const url = `https://apis.tianapi.com/ipquery/index?key=${ipquery_key}&ip=${ip}&full=1`;
+    request(url, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            res.send(body);
+        } else {
+            res.send(error);
+        }
+    });
+})
 
 // 读取静态资源图片
 app.use(express.static('public'));
