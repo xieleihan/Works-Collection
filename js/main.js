@@ -75,9 +75,24 @@ async function updataMessageList(){
         });
 };
 
+async function getIpInfo() {
+    await get('http://ip-api.com/json/?lang=zh-CN')
+        .then(res => {
+            console.log(res);
+            $('#ip').text("IP地址：" + res.query);
+            $('#city').text("城市：" + res.country + res.city + res.regionName);
+            $('#zip').text("邮编：" + res.zip);
+            $('#isp').text("运营商：" + res.isp);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}
+
 // 留言列表抢先刷新
 $(async function () {
     updataMessageList();
+    getIpInfo();
 })
 
 // 浏览器搞笑标题

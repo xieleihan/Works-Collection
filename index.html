@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,27 +10,31 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/x-icon" href="./image/peacock_flat.ico">
 </head>
+
 <body>
     <nav class="sticky-top navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
             <div class="navbar-brand">
-                <img class="img-fluid" style="width: 30px; height: auto;" src="./image/mmexport1692437709834.png" alt="">
+                <img class="img-fluid" style="width: 30px; height: auto;" src="./image/mmexport1692437709834.png"
+                    alt="">
                 <a href="#" class="navbar-brand">南秋SouthAki作品合集</a>
             </div>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item d-flex align-items-center">
                         <input class="rounded ps-2" type="text" placeholder="Google搜索">
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" style="cursor: url('./res/help.cur'), pointer;"><i class="bi me-1 bi-router"></i>联系</a>
+                        <a href="#" class="nav-link" style="cursor: url('./res/help.cur'), pointer;"><i
+                                class="bi me-1 bi-router"></i>联系</a>
                     </li>
                     <li class="nav-item">
-                        <a id="about" href="#" class="nav-link" style="cursor: url('./res/help.cur'), pointer;"><i class="bi me-1 bi-slack"></i>关于</a>
+                        <a id="about" href="#" class="nav-link" style="cursor: url('./res/help.cur'), pointer;"><i
+                                class="bi me-1 bi-slack"></i>关于</a>
                     </li>
                 </ul>
             </div>
@@ -47,16 +52,19 @@
                     <p class="lead">
                         你可以点击下面的方式联系我，或者滚动更多查看我的作品。
                     </p>
-                    <a target="_blank" href="https://github.com/xieleihan" class="btn btn-light btn-lg m-2" style="cursor: url('./res/help.cur'), pointer;">
+                    <a target="_blank" href="https://github.com/xieleihan" class="btn btn-light btn-lg m-2"
+                        style="cursor: url('./res/help.cur'), pointer;">
                         <i class="bi bi-github"></i>
                         Github
                     </a>
-                    <a href="mailto:xieleihaninc@wo.cn" class="btn btn-primary btn-lg m-2" style="cursor: url('./res/help.cur'), pointer;">
+                    <a href="mailto:xieleihaninc@wo.cn" class="btn btn-primary btn-lg m-2"
+                        style="cursor: url('./res/help.cur'), pointer;">
                         <i class="bi bi-mailbox"></i>
                         Email
                     </a>
                 </div>
-                <img src="./image/mmexport1692437709834.png" alt="" class="rounded img-fluid m-5 h-25 w-25 d-none d-lg-block">
+                <img src="./image/mmexport1692437709834.png" alt=""
+                    class="rounded img-fluid m-5 h-25 w-25 d-none d-lg-block">
             </div>
         </div>
     </section>
@@ -64,22 +72,31 @@
         <div class="container">
             <div class="d-sm-flex flex-column flex-lg-row">
                 <img src="./image/千帆引擎.png" alt="" class="rounded img-fluid m-3 h-25 w-25">
-                
+
                 <div class="mt-lg-3 mt-0">
                     <h1>这是第一个项目：<span class="text-warning">千帆引擎</span>【工具类】</h1>
                     <p class="lead w-lg-75">
                         <span class="fw-bold">技术栈：</span>
-                        前端：ArkTS（鸿蒙开发客户端HAP）<img class="img-fluid" src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" style="width: 25px; height: auto;" alt="TypeScript logo" />，后端：Python（FastAPI）<img class="img-fluid" src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" style="width: 25px; height: auto;" alt="Python logo" />+Langchain，数据库：MySQL<img class="img-fluid" src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" style="width: 25px; height: auto;" alt="MySQL logo" />
+                        前端：ArkTS（鸿蒙开发客户端HAP）<img class="img-fluid"
+                            src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                            style="width: 25px; height: auto;" alt="TypeScript logo" />，后端：Python（FastAPI）<img
+                            class="img-fluid"
+                            src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                            style="width: 25px; height: auto;" alt="Python logo" />+Langchain，数据库：MySQL<img
+                            class="img-fluid"
+                            src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                            style="width: 25px; height: auto;" alt="MySQL logo" />
                     </p>
                     <p class="lead text-warning">独立开发</p>
                     <p class="lead">
                         <span class="fw-bold">主要实现的功能：（包括但不限于）</span>
-                        <ul class="list-unstyled">
-                            <li>1、实现了基本的UI美观度，并且页面流转无任何问题，匹配鸿蒙的设计规范。</li>
-                            <li>2、首页部分，引入了AI聊天机器人的功能，调用深度求索Deepseek的API，搭配Langchain扩展工具Tool，使其能力得到提升，能够识别文档内容，并给出总结的富文本显示。</li>
-                            <li>3、扩宽了HAP的能力，实现了包括但不限于天气，漫画，音乐等工具的功能，后续可以继续扩展能力。</li>
-                            <li>4、实现了代理隧道的功能，能够调用系统级的服务，实现数据公网传输安全性。</li>
-                        </ul>
+                    <ul class="list-unstyled">
+                        <li>1、实现了基本的UI美观度，并且页面流转无任何问题，匹配鸿蒙的设计规范。</li>
+                        <li>2、首页部分，引入了AI聊天机器人的功能，调用深度求索Deepseek的API，搭配Langchain扩展工具Tool，使其能力得到提升，能够识别文档内容，并给出总结的富文本显示。
+                        </li>
+                        <li>3、扩宽了HAP的能力，实现了包括但不限于天气，漫画，音乐等工具的功能，后续可以继续扩展能力。</li>
+                        <li>4、实现了代理隧道的功能，能够调用系统级的服务，实现数据公网传输安全性。</li>
+                    </ul>
                     </p>
                     <button class="btn btn-dark btn-lg" style="cursor: url('./res/help.cur'), pointer;">
                         <i class="bi bi-github"></i>
@@ -87,7 +104,7 @@
                     </button>
                 </div>
             </div>
-            
+
         </div>
     </section>
     <section class="bg-black text-light p-5 text-center text-sm-start">
@@ -99,12 +116,11 @@
                         <span class="fw-bold">技术栈：</span>
                         前端：Vue3<img class="img-fluid"
                             src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
-                            style="width: 25px; height: auto;" alt="TypeScript logo" />+pinia<img class="img-fluid" src="https://pinia.vuejs.org/logo.svg"
-                                style="width: 25px; height: auto;" alt="pinia logo" />+Vue Router+Vant4等，后端：Node.js<img
-                            class="img-fluid"
+                            style="width: 25px; height: auto;" alt="TypeScript logo" />+pinia<img class="img-fluid"
+                            src="https://pinia.vuejs.org/logo.svg" style="width: 25px; height: auto;"
+                            alt="pinia logo" />+Vue Router+Vant4等，后端：Node.js<img class="img-fluid"
                             src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                            style="width: 25px; height: auto;" alt="Nodejs logo" />，数据库：MySQL<img
-                            class="img-fluid"
+                            style="width: 25px; height: auto;" alt="Nodejs logo" />，数据库：MySQL<img class="img-fluid"
                             src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
                             style="width: 25px; height: auto;" alt="MySQL logo" />
                     </p>
@@ -135,8 +151,7 @@
                     <h1>这是第三个项目：<span class="text-warning">山海行</span>【商城类】</h1>
                     <p class="lead w-lg-75">
                         <span class="fw-bold">技术栈：</span>
-                        前端：WeChat-miniprogram<img class="img-fluid"
-                            src="./image/icon/wechat.svg"
+                        前端：WeChat-miniprogram<img class="img-fluid" src="./image/icon/wechat.svg"
                             style="width: 25px; height: auto;" alt="TypeScript logo" />，后端：Node.js<img class="img-fluid"
                             src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
                             style="width: 25px; height: auto;" alt="Nodejs logo" />，数据库：MySQL<img class="img-fluid"
@@ -157,22 +172,24 @@
                         <i class="bi bi-github"></i>
                         访问项目
                     </button>
-                    
+
                 </div>
-                
+
             </div>
         </div>
     </section>
     <section class="bg-black text-light p-5 text-center text-sm-start">
         <div class="container">
             <div class="d-sm-flex flex-column flex-lg-row">
-                
+
                 <div class="mt-lg-3 mt-0">
                     <h1>这是第四个项目：<span class="text-warning">孔雀外卖</span>【商城类】</h1>
                     <p class="lead w-lg-75">
                         <span class="fw-bold">技术栈：</span>
-                        前端：Vue2<img class="img-fluid" src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
-                            style="width: 25px; height: auto;" alt="TypeScript logo" />+Vue Router+Vant2，后端：SpringBoot<img class="img-fluid"
+                        前端：Vue2<img class="img-fluid"
+                            src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+                            style="width: 25px; height: auto;" alt="TypeScript logo" />+Vue
+                        Router+Vant2，后端：SpringBoot<img class="img-fluid"
                             src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
                             style="width: 25px; height: auto;" alt="SpringBoot logo" />，数据库：MySQL<img class="img-fluid"
                             src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
@@ -204,9 +221,12 @@
                 <div class="mt-lg-3 mt-0">
                     <h1>这是第五个项目：<span class="text-warning">小知书</span>【工具类】</h1>
                     <span class="fw-bold">技术栈：</span>
-                    前端：Vue2<img class="img-fluid" src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
-                        style="width: 25px; height: auto;" alt="TypeScript logo" />+Vue Router+Vant2，后端：Node.js<img class="img-fluid" src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                            style="width: 25px; height: auto;" alt="Nodejs logo" />，数据库：MySQL<img class="img-fluid"
+                    前端：Vue2<img class="img-fluid"
+                        src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+                        style="width: 25px; height: auto;" alt="TypeScript logo" />+Vue Router+Vant2，后端：Node.js<img
+                        class="img-fluid"
+                        src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                        style="width: 25px; height: auto;" alt="Nodejs logo" />，数据库：MySQL<img class="img-fluid"
                         src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
                         style="width: 25px; height: auto;" alt="MySQL logo" />
                     <p class="lead text-warning">合作开发（本人负责前端大框架和后端服务搭建，协调组织合作，调动沟通）</p>
@@ -224,14 +244,14 @@
                         访问项目
                     </button>
                 </div>
-    
+
             </div>
         </div>
     </section>
     <section class="bg-black text-light p-5 text-center text-sm-start">
         <div class="container">
             <div class="d-sm-flex flex-column flex-lg-row">
-    
+
                 <div class="mt-lg-3 mt-0">
                     <h1>这是第六个项目：<span class="text-warning">懂乎日报</span>【工具类】</h1>
                     <p class="lead w-lg-75">
@@ -287,22 +307,23 @@
                         访问项目
                     </button>
                 </div>
-    
+
             </div>
         </div>
     </section>
     <section class="bg-black text-light p-5 text-center text-sm-start">
         <div class="container">
             <div class="d-sm-flex flex-column flex-lg-row">
-    
+
                 <div class="mt-lg-3 mt-0">
                     <h1>这是第八个项目：<span class="text-warning">画境华章</span>【工具类】</h1>
                     <p class="lead w-lg-75">
                         <span class="fw-bold">技术栈：</span>
                         前端：Uniapp<img class="img-fluid"
                             src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
-                            style="width: 25px; height: auto;" alt="TypeScript logo" />+TypeScript<img class="img-fluid" src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                                style="width: 25px; height: auto;" alt="TypeScript logo" />
+                            style="width: 25px; height: auto;" alt="TypeScript logo" />+TypeScript<img class="img-fluid"
+                            src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                            style="width: 25px; height: auto;" alt="TypeScript logo" />
                     </p>
                     <p class="lead text-warning">独立开发</p>
                     <p class="lead">
@@ -338,107 +359,156 @@
                     <h1 class="mb-5"><span class="text-warning me-2">技能</span>开启创造力</h1>
                     <div class="d-flex border p-5 my-d-flex rounded overflow-hidden w-100">
                         <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: #e44d26;" src="./image/svg/html.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: #1572b6;" src="./image/svg/css.svg" alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: #e44d26;" src="./image/svg/html.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: #1572b6;" src="./image/svg/css.svg"
+                                alt="">
                         </div>
                         <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: #f0db4f;" src="./image/svg/JavaScript.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: #007acc;" src="./image/svg/typescript.svg" alt="">
-                        </div>
-                        <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;" src="./image/svg/git.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;" src="./image/svg/docker.svg" alt="">
-                        </div>
-                        <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;" src="./image/svg/java.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;" src="./image/svg/python.svg" alt="">
-                        </div>
-                        <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;" src="./image/svg/vue.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;" src="./image/svg/json.svg" alt="">
-                        </div>
-                        <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;" src="./image/svg/nodejs.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;" src="./image/svg/mysql.svg" alt="">
-                        </div>
-                        <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: #e44d26;"
-                                src="./image/svg/html.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: #1572b6;"
-                                src="./image/svg/css.svg" alt="">
-                        </div>
-                        <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: #f0db4f;"
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: #f0db4f;"
                                 src="./image/svg/JavaScript.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: #007acc;"
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: #007acc;"
                                 src="./image/svg/typescript.svg" alt="">
                         </div>
                         <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/git.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/docker.svg" alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/git.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/docker.svg"
+                                alt="">
                         </div>
                         <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/java.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/python.svg" alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/java.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/python.svg"
+                                alt="">
                         </div>
                         <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/vue.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/json.svg" alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/vue.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/json.svg"
+                                alt="">
                         </div>
                         <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/nodejs.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/mysql.svg" alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/nodejs.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/mysql.svg"
+                                alt="">
                         </div>
                         <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: #e44d26;"
-                                src="./image/svg/html.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: #1572b6;"
-                                src="./image/svg/css.svg" alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: #e44d26;" src="./image/svg/html.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: #1572b6;" src="./image/svg/css.svg"
+                                alt="">
                         </div>
                         <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: #f0db4f;"
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: #f0db4f;"
                                 src="./image/svg/JavaScript.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: #007acc;"
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: #007acc;"
                                 src="./image/svg/typescript.svg" alt="">
                         </div>
                         <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/git.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/docker.svg" alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/git.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/docker.svg"
+                                alt="">
                         </div>
                         <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/java.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/python.svg" alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/java.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/python.svg"
+                                alt="">
                         </div>
                         <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/vue.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/json.svg" alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/vue.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/json.svg"
+                                alt="">
                         </div>
                         <div class="item-group d-flex flex-column">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/nodejs.svg" alt="">
-                            <img class="img-fluid p-2 rounded border m-2" style="width: 100px;height: 100px;background-color: white;"
-                                src="./image/svg/mysql.svg" alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/nodejs.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/mysql.svg"
+                                alt="">
+                        </div>
+                        <div class="item-group d-flex flex-column">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: #e44d26;" src="./image/svg/html.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: #1572b6;" src="./image/svg/css.svg"
+                                alt="">
+                        </div>
+                        <div class="item-group d-flex flex-column">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: #f0db4f;"
+                                src="./image/svg/JavaScript.svg" alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: #007acc;"
+                                src="./image/svg/typescript.svg" alt="">
+                        </div>
+                        <div class="item-group d-flex flex-column">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/git.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/docker.svg"
+                                alt="">
+                        </div>
+                        <div class="item-group d-flex flex-column">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/java.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/python.svg"
+                                alt="">
+                        </div>
+                        <div class="item-group d-flex flex-column">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/vue.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/json.svg"
+                                alt="">
+                        </div>
+                        <div class="item-group d-flex flex-column">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/nodejs.svg"
+                                alt="">
+                            <img class="img-fluid p-2 rounded border m-2"
+                                style="width: 100px;height: 100px;background-color: white;" src="./image/svg/mysql.svg"
+                                alt="">
                         </div>
                     </div>
                 </div>
                 <div class="mt-lg-5 my-5 mx-5">
                     <h1 class="display-5 text-nowrap">个人信息</h1>
                     <div class="d-sm-flex my-2 align-items-center mt-5">
-                        <img class="img-fluid me-3" style="width: 100px; height: 100px;" src="./image/mmexport1692437709834.png" alt="">
+                        <img class="img-fluid me-3" style="width: 100px; height: 100px;"
+                            src="./image/mmexport1692437709834.png" alt="">
                         <div class="d-sm-flex flex-column">
                             <p class="lead fw-bold text-nowrap">南秋SouthAki</p>
                             <p class="lead text-nowrap">男&nbsp;|&nbsp;21岁&nbsp;|&nbsp;GKD</p>
@@ -464,26 +534,72 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-7 d-flex flex-column p-2 px-5 ps-lg-5 pe-lg-0">
-                    <input id="inputEmail" style="border: 1px solid #ccc !important;" class="border-0 mb-2 rounded py-2 ps-2" type="email" placeholder="请输入你的邮箱" />
+                    <input id="inputEmail" style="border: 1px solid #ccc !important;"
+                        class="border-0 mb-2 rounded py-2 ps-2" type="email" placeholder="请输入你的邮箱" />
                     <div class="mb-2 position-relative">
-                        <input id="emailcode" style="border: 1px solid #ccc !important;" class="border-0 w-100 rounded py-2 ps-2" type="text" placeholder="请输入邮箱验证码" maxlength="6">
-                        <button id="sendVerification" class="position-absolute translate-middle-y top-50 end-2 border-0" style="text-decoration: underline;cursor: not-allowed;color: #ccc;">发送验证码</button>
+                        <input id="emailcode" style="border: 1px solid #ccc !important;"
+                            class="border-0 w-100 rounded py-2 ps-2" type="text" placeholder="请输入邮箱验证码" maxlength="6">
+                        <button id="sendVerification" class="position-absolute translate-middle-y top-50 end-2 border-0"
+                            style="text-decoration: underline;cursor: not-allowed;color: #ccc;">发送验证码</button>
                     </div>
-                    <input id="username" style="border: 1px solid #ccc !important;" class="border-0 mb-2 rounded py-2 ps-2" type="text" placeholder="请输入你的昵称" />
+                    <input id="username" style="border: 1px solid #ccc !important;"
+                        class="border-0 mb-2 rounded py-2 ps-2" type="text" placeholder="请输入你的昵称" />
 
-                    <textarea id="message" style="resize:none;border: 1px solid #ccc !important;" class="border-0 mb-2 rounded ps-2" placeholder="请输入你的留言" ></textarea>
+                    <textarea id="message" style="resize:none;border: 1px solid #ccc !important;"
+                        class="border-0 mb-2 rounded ps-2" placeholder="请输入你的留言"></textarea>
                     <div class="mb-2 d-flex">
-                        <input id="verifycode" style="border: 1px solid #ccc !important;" class="border-0 rounded py-2 ps-2" type="text" maxlength="4" placeholder="请输入图片验证码">
-                        <img class="img-fluid verifycodeImages" src="./image/svg/loading.svg" style="width: 50%;height: 40px;" alt="">
+                        <input id="verifycode" style="border: 1px solid #ccc !important;"
+                            class="border-0 rounded py-2 ps-2" type="text" maxlength="4" placeholder="请输入图片验证码">
+                        <img class="img-fluid verifycodeImages" src="./image/svg/loading.svg"
+                            style="width: 50%;height: 40px;" alt="">
                     </div>
-                    <button class="btn btn-primary" id="sendMessage" style="cursor: url('./res/help.cur'), pointer;">发送留言</button>
+                    <button class="btn btn-primary" id="sendMessage"
+                        style="cursor: url('./res/help.cur'), pointer;">发送留言</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="bg-black text-light">
+        <div class="container py-5 d-flex align-items-center justify-content-center">
+            <span class="display-5">下面是我的一些GitHub信息</span>
+        </div>
+    </section>
+
+    <section class="bg-light text-black">
+        <div class="container py-5">
+            <div class="row align-items-stretch">
+                <!-- 左侧部分 -->
+                <div class="col-12 col-lg-6 d-flex flex-column">
+                    <p class="lead fw-bold">我的Github热力图：</p>
+                    <img class="img-fluid rounded"
+                        src="https://raw.githubusercontent.com/xieleihan/xieleihan/refs/heads/main/profile-3d-contrib/profile-gitblock.svg"
+                        alt="">
+                </div>
+    
+                <!-- 右侧部分 -->
+                <div class="col-12 col-lg-6 d-flex flex-column ps-4">
+                    <p class="lead fw-bold">我的Github提交情况：</p>
+                    <div class="row">
+                        <img src="https://github-readme-stats.vercel.app/api?username=xieleihan&count_private=true&show_icons=true&line_height=46"
+                            alt="" class="img-fluid col-12 mb-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section>
-        <div>
+        <div class="position-relative">
             <img class="img-fluid" src="./image/bg.jpg" alt="">
+            <div class="position-absolute top-50 rounded text-light p-2" style="background-color: rgba(0, 0, 0, .7);width: 20%;height: 40%;left: 60%;">
+                <p class="lead mb-2">你当前访问的IP信息是：</p>
+                <p class="lead mb-1" id="ip"></p>
+                <p class="lead mb-1" id="city"></p>
+                <p class="lead mb-1" id="zip"></p>
+                <p class="lead mb-1" id="isp" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"></p>
+            </div>
         </div>
     </section>
 
@@ -507,18 +623,21 @@
                 <img class="img-fluid me-3"
                     src="https://img.shields.io/badge/%E7%BD%91%E7%9B%BE%E6%98%9F%E7%90%83-%E6%8F%90%E4%BE%9BCDN%E6%94%AF%E6%8C%81-red"
                     alt="">
-                <img class="img-fluid me-3" src="https://data.jsdelivr.com/v1/package/gh/southaki/contentDeliveryNetwork/badge"
-                    alt="">
                 <img class="img-fluid me-3"
-                    src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt="">
+                    src="https://data.jsdelivr.com/v1/package/gh/southaki/contentDeliveryNetwork/badge" alt="">
+                <img class="img-fluid me-3"
+                    src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris"
+                    alt="">
             </div>
         </div>
 
     </section>
 
-    <div class="toast show position-fixed top-10 end-2" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+    <div class="toast show position-fixed top-10 end-2" role="alert" aria-live="assertive" aria-atomic="true"
+        data-bs-autohide="false">
         <div class="toast-header">
-            <img style="width: 25px; height: 25px;" src="./image/peacock_flat.ico" class="rounded mr-2 img-fluid" alt="...">
+            <img style="width: 25px; height: 25px;" src="./image/peacock_flat.ico" class="rounded mr-2 img-fluid"
+                alt="...">
             <strong class="me-auto">Bootstrap</strong>
             <small class="text-muted">Now</small>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -531,4 +650,5 @@
 <script src="./js/bootstrap.bundle.min.js"></script>
 <script src="./js/jquery-3.7.1.min.js"></script>
 <script src="./js/main.js"></script>
+
 </html>
