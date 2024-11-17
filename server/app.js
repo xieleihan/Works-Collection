@@ -32,12 +32,15 @@ const verifyImageRouter = require('./router/verifyImage');
 const messageRouter = require('./router/message');
 // 管理员的路由
 const adminRouter = require('./router/SuperAdmin');
+const userRouter = require('./router/UserInfo');
 
 // 使用路由
 app.use('/api/email', emailRouter);
 app.use('/api/verifyImage', verifyImageRouter);
 app.use('/api/message', messageRouter);
 app.use('/api/private', adminRouter);
+app.use('/api/private/user', userRouter);
+
 
 // 测试(公开接口)
 app.get('/', (req, res) => {
