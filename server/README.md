@@ -28,7 +28,7 @@
 >
 > - 接口地址:`/api/verifyImage/generateVerifyimages`
 > - 方法:`GET`
-> - 参数:`client_email`(这个需要在前端部分先验证邮箱有效性再调用这个)
+> - 参数:`client_email`
 >
 > ### 验证图片验证码
 >

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./css/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/x-icon" href="./image/peacock_flat.ico">
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/china.js"></script>
 </head>
 
 <body>
@@ -589,6 +591,31 @@
         </div>
     </section>
 
+    <section class="bg-black text-light">
+        <div class="container py-5 d-flex align-items-center justify-content-center">
+            <span class="display-5">访问者信息</span>
+        </div>
+    </section>
+
+    <section class="bg-light text-black">
+        <div class="container py-5">
+            <div class="row align-items-stretch">
+                <!-- 左侧部分 -->
+                <div class="col-12 col-lg-6 d-flex flex-column">
+                    <p class="lead fw-bold">中国热力图：</p>
+                    <div id="map" style="height: 30rem;width: 100%;"></div>
+                    
+                </div>
+    
+                <!-- 右侧部分 -->
+                <div class="col-12 col-lg-6 d-flex flex-column ps-4">
+                    <p class="lead fw-bold">你当前网络信息：</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- <section style="background-image: url('./image/bg.jpg');background-size: cover;">
         <div class="py-5 d-flex flex-row-reverse px-5" >
@@ -650,5 +677,6 @@
 <script src="./js/bootstrap.bundle.min.js"></script>
 <script src="./js/jquery-3.7.1.min.js"></script>
 <script src="./js/main.js"></script>
+
 
 </html>

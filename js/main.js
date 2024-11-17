@@ -1,6 +1,6 @@
 // 定义变量
-const url = 'https://api.u546322.nyat.app:26112'
-// const url = 'http://localhost:3000'
+// const url = 'https://api.u546322.nyat.app:26112'
+const url = 'http://localhost:3000'
 
 // const networkUrl = 'api.u546322.nyat.app:26112' // 公网请求
 // const networkUrl = 'http://localhost:3000' // 本地请求
@@ -78,24 +78,19 @@ async function updataMessageList(){
 };
 
 async function getIpInfo() {
-    await get('https://api.ipify.org/?format=json')
+    await get('https://ip-api.io/json')
         .then(async res => {
-            console.log(res.ip);
-            // $('#ip').text("IP地址：" + res.query);
-            // $('#city').text("城市：" + res.country + res.city + res.regionName);
-            // $('#zip').text("邮编：" + res.zip);
-            // $('#isp').text("运营商：" + res.isp);
+            // console.log(res.ip);
+            console.warn("你当前访问的IP地址是：" + res.ip);
             await get(url + '/api/proxy/ipqueryinfo?ip=' + res.ip)
-                .then((res) => {
-                    console.log(res);
-                    $('#ip').text("IP地址：" + res.result.ip);
-                    $('#city').text("城市：" + res.result.country + res.result.province + res.result.city);
-                    // $('#zip').text("邮编：" + res.zip);
-                    $('#isp').text("运营商：" + res.result.isp);
+                .then(res => {
+                    console.log(res)
                 })
                 .catch(err => {
                     console.log(err);
-                })
+                });
+            
+            
         })
         .catch(err => {
             console.log(err);
@@ -234,6 +229,109 @@ $('#sendMessage').on('click', async function () {
     }
 });
 
+var dataList = [
+    { name: "南海诸岛", value: 0 },
+    { name: '北京', value: randomValue() },
+    { name: '天津', value: randomValue() },
+    { name: '上海', value: randomValue() },
+    { name: '重庆', value: randomValue() },
+    { name: '河北', value: randomValue() },
+    { name: '河南', value: randomValue() },
+    { name: '云南', value: randomValue() },
+    { name: '辽宁', value: randomValue() },
+    { name: '黑龙江', value: randomValue() },
+    { name: '湖南', value: randomValue() },
+    { name: '安徽', value: randomValue() },
+    { name: '山东', value: randomValue() },
+    { name: '新疆', value: randomValue() },
+    { name: '江苏', value: randomValue() },
+    { name: '浙江', value: randomValue() },
+    { name: '江西', value: randomValue() },
+    { name: '湖北', value: randomValue() },
+    { name: '广西', value: randomValue() },
+    { name: '甘肃', value: randomValue() },
+    { name: '山西', value: randomValue() },
+    { name: '内蒙古', value: randomValue() },
+    { name: '陕西', value: randomValue() },
+    { name: '吉林', value: randomValue() },
+    { name: '福建', value: randomValue() },
+    { name: '贵州', value: randomValue() },
+    { name: '广东', value: randomValue() },
+    { name: '青海', value: randomValue() },
+    { name: '西藏', value: randomValue() },
+    { name: '四川', value: randomValue() },
+    { name: '宁夏', value: randomValue() },
+    { name: '海南', value: randomValue() },
+    { name: '台湾', value: randomValue() },
+    { name: '香港', value: randomValue() },
+    { name: '澳门', value: randomValue() }
+]
 
+// 随机函数
+function randomValue() {
+    return Math.round(Math.random() * 1000);
+}
+
+
+var option = {
+    tooltip: {
+        formatter: function (params, ticket, callback) {
+            return params.seriesName + '<br />' + params.name + '：' + params.value
+        }//数据格式化
+    },
+    visualMap: {
+        min: 0,
+        max: 1500,
+        left: 'left',
+        top: 'bottom',
+        text: ['高', '低'],//取值范围的文字
+        inRange: {
+            color: ['#e0ff00', '#006e00']//取值范围的颜色
+        },
+        show: true//图注
+    },
+    geo: {
+        map: 'china',
+        roam: false,//不开启缩放和平移
+        zoom: 1.23,//视角缩放比例
+        label: {
+            normal: {
+                show: true,
+                fontSize: '10',
+                color: 'rgba(0,0,0,0.7)'
+            }
+        },
+        itemStyle: {
+            normal: {
+                borderColor: 'rgba(0, 0, 0, 0.2)'
+            },
+            emphasis: {
+                areaColor: '#F3B329',//鼠标选择区域颜色
+                shadowOffsetX: 0,
+                shadowOffsetY: 0,
+                shadowBlur: 20,
+                borderWidth: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+        }
+    },
+    series: [
+        {
+            name: '信息量',
+            type: 'map',
+            geoIndex: 0,
+            data: dataList
+        }
+    ]
+};
+
+// 基于准备好的dom，初始化echarts实例
+var myChart = echarts.init(document.getElementById('map'));
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
+// 点击事件
+myChart.on('click', function (params) {
+    alert(params.name + ':' + params.seriesName + ':' + params.value);
+});
 
 // end
