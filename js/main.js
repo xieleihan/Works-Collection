@@ -1,6 +1,7 @@
 // 定义变量
 // const url = 'https://api.u546322.nyat.app:26112'
-const url = 'http://localhost:3000'
+// const url = 'http://localhost:3000'
+const url = 'https://bt.southaki.top:3000'
 
 // const networkUrl = 'api.u546322.nyat.app:26112' // 公网请求
 // const networkUrl = 'http://localhost:3000' // 本地请求
